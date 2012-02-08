@@ -31,22 +31,17 @@
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jc-chemdraw</artifactId>
-            <version>${project.version}</version>
+            <artifactId>jc-composite</artifactId>
+            <version>0.3-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jc-cif</artifactId>
-            <version>0.4-SNAPSHOT</version>
+            <artifactId>jc-crystal</artifactId>
+            <version>0.3-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
             <artifactId>jc-compchem-amber</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cml</groupId>
-            <artifactId>jc-compchem-cml</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
