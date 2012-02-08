@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cml xmlns="http://www.xml-cml.org/schema">
+  <molecule title="Test example" formalCharge="0">
+    <atomArray>
+      <atom id="a1" x3="0.0" y3="0.0" z3="0.0" elementType="C"/>
+      <atom id="a2" x3="1.34" y3="0.0" z3="0.0" elementType="N"/>
+      <atom id="a3" x3="2.0" y3="1.1" z3="0.0" elementType="O"/>
+    <atom id="a1_h1" elementType="H" x3="0.6235382907247959" y3="0.6235382907247959" z3="0.6235382907247959"/><atom id="a1_h2" elementType="H" x3="-0.6235382907247959" y3="0.6235382907247959" z3="-0.6235382907247959"/><atom id="a1_h3" elementType="H" x3="0.6235382907247959" y3="-0.6235382907247959" z3="-0.6235382907247959"/><atom id="a1_h4" elementType="H" x3="-0.6235382907247959" y3="-0.6235382907247959" z3="0.6235382907247959"/><atom id="a2_h1" elementType="H" x3="1.34" y3="0.0" z3="1.03"/><atom id="a2_h2" elementType="H" x3="1.34" y3="-0.5149999999999998" z3="-0.8920061658979719"/><atom id="a2_h3" elementType="H" x3="1.34" y3="-0.5149999999999998" z3="0.8920061658979719"/><atom id="a3_h1" elementType="H" x3="2.0" y3="1.1" z3="0.96"/><atom id="a3_h2" elementType="H" x3="2.0" y3="2.0314838972249567" z3="-0.23224501977568107"/></atomArray>
+  <bondArray><bond atomRefs2="a1 a1_h1" id="a1_a1_h1" order="S"/><bond atomRefs2="a1 a1_h2" id="a1_a1_h2" order="S"/><bond atomRefs2="a1 a1_h3" id="a1_a1_h3" order="S"/><bond atomRefs2="a1 a1_h4" id="a1_a1_h4" order="S"/><bond atomRefs2="a2 a2_h1" id="a2_a2_h1" order="S"/><bond atomRefs2="a2 a2_h2" id="a2_a2_h2" order="S"/><bond atomRefs2="a2 a2_h3" id="a2_a2_h3" order="S"/><bond atomRefs2="a3 a3_h1" id="a3_a3_h1" order="S"/><bond atomRefs2="a3 a3_h2" id="a3_a3_h2" order="S"/></bondArray></molecule>
+</cml>
