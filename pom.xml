@@ -10,8 +10,8 @@
         <version>0.3-SNAPSHOT</version>
     </parent>
 
-    <artifactId>jumbo-converters-cli</artifactId>
-    <name>jumbo-converters-cli</name>
+    <artifactId>jc-cli</artifactId>
+    <name>jc-cli</name>
 
     <dependencies>
         <dependency>
@@ -26,102 +26,102 @@
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-core</artifactId>
+            <artifactId>jc-top-core</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-chemdraw</artifactId>
+            <artifactId>jc-chemdraw</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-cif</artifactId>
+            <artifactId>jc-cif</artifactId>
             <version>0.4-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-compchem-amber</artifactId>
+            <artifactId>jc-compchem-amber</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-compchem-cml</artifactId>
+            <artifactId>jc-compchem-cml</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-compchem-common</artifactId>
+            <artifactId>jc-compchem-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-compchem-dalton</artifactId>
+            <artifactId>jc-compchem-dalton</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-compchem-gamessuk</artifactId>
+            <artifactId>jc-compchem-gamessuk</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-compchem-gamessus</artifactId>
+            <artifactId>jc-compchem-gamessus</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-compchem-gaussian</artifactId>
+            <artifactId>jc-compchem-gaussian</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-compchem-jaguar</artifactId>
+            <artifactId>jc-compchem-jaguar</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-compchem-molcas</artifactId>
+            <artifactId>jc-compchem-molcas</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-compchem-mopac</artifactId>
+            <artifactId>jc-compchem-mopac</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-compchem-nwchem</artifactId>
+            <artifactId>jc-compchem-nwchem</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-compchem-qespresso</artifactId>
+            <artifactId>jc-compchem-qespresso</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-compchem-turbomole</artifactId>
+            <artifactId>jc-compchem-turbomole</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-molecule</artifactId>
+            <artifactId>jc-molecule</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-molecule-cml</artifactId>
+            <artifactId>jc-molecule-cml</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-reaction</artifactId>
+            <artifactId>jc-reaction</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-spectrum</artifactId>
+            <artifactId>jc-spectrum</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
@@ -136,7 +136,8 @@
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jumbo-converters-testutils</artifactId>
+            <artifactId>jc-top-testutils</artifactId>
+            <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
 

@@ -12,11 +12,6 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
 
-import junit.framework.Assert;
-
-import org.junit.Ignore;
-import org.junit.Test;
-
 public class GlobberTest {
 
 	@Test

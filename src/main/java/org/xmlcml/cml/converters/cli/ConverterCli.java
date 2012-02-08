@@ -16,7 +16,6 @@ import org.apache.log4j.Logger;
 import org.xmlcml.cml.base.CMLUtil;
 import org.xmlcml.cml.converters.Converter;
 import org.xmlcml.cml.converters.MimeType;
-import org.xmlcml.cml.converters.molecule.cml.CMLTransformMolecule;
 import org.xmlcml.cml.converters.registry.ConverterRegistry;
 import org.xmlcml.euclid.Util;
 
@@ -97,7 +96,9 @@ public class ConverterCli {
 	}
 
 	private void convert(String[] args) {
-		if (!(converter instanceof CMLTransformMolecule)) {
+		// FIXME this is horrible
+		if (true ) {
+//		if (!(converter instanceof CMLTransformMolecule)) {
 			if (inStream != null) {
 				converter.convert(inStream, outfile);
 			} else if (infiles != null) {
@@ -157,16 +158,17 @@ public class ConverterCli {
 		if (xpath == null) {
 			xpath = "//cml:molecule";
 		}
-		CMLTransformMolecule transformer = new CMLTransformMolecule();
-		for (String command : editList) {
-			transformer.transformMolecule(command, element, xpath);
-		}
-		try {
-			CMLUtil.debug(element, new FileOutputStream(outfile), 0);
-		} catch (Exception e) {
-			throw new RuntimeException("Cannot find/write output: "+outfile, e);
-		}
-		converter = transformer;
+		if (true) throw new RuntimeException("FIX tramsformMolecule");
+//		CMLTransformMolecule transformer = new CMLTransformMolecule();
+//		for (String command : editList) {
+//			transformer.transformMolecule(command, element, xpath);
+//		}
+//		try {
+//			CMLUtil.debug(element, new FileOutputStream(outfile), 0);
+//		} catch (Exception e) {
+//			throw new RuntimeException("Cannot find/write output: "+outfile, e);
+//		}
+//		converter = transformer;
 	}
 
 	private void getInputAndOutputTypes() {
