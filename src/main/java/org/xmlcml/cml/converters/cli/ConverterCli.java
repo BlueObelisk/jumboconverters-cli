@@ -62,8 +62,8 @@ public class ConverterCli {
 
 	private void getInputAndOutputs() throws Exception {
 		if (startDirName != null) {
-			Globber globber = new Globber(inputName, startDirName);
-			infiles = globber.walkTree();
+//			Globber globber = new Globber(inputName, startDirName);
+//			infiles = globber.walkTree();
 		} else if (inputUrl != null) {
 			inStream = new URL(inputUrl).openStream();
 			outfile = new File(outputName);
@@ -181,7 +181,7 @@ public class ConverterCli {
 			outputType = ConverterRegistry.getDefaultConverterRegistry().getSingleMimeTypeFromFilename(outputName);
 		}
 		if (inputType == null || outputType == null) {
-			throw new RuntimeException("Cannot find or deduce I/O types");
+			throw new RuntimeException("Cannot find or deduce I/O types "+inputName+" - "+outputName);
 		}
 		if ((inputName == null && inputUrl == null) || outputName == null) {
 			throw new RuntimeException("Cannot find or deduce I/O streams");

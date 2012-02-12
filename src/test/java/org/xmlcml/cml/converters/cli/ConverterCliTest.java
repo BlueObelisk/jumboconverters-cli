@@ -12,7 +12,6 @@ import org.xmlcml.cml.base.CMLUtil;
 import org.xmlcml.cml.converters.MimeType;
 import org.xmlcml.cml.testutil.JumboTestUtils;
 
-@Ignore
 public class ConverterCliTest {
 
 	private static String CIF_TYPE = "chemical/x-cif";
