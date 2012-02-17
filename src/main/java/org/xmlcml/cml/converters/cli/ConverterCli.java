@@ -192,7 +192,9 @@ public class ConverterCli {
 			String outputType) {
 		System.err.println("cannot find converter for: "+Util.concatenate(args, " "));
 		List<Converter> converterList = ConverterRegistry.getDefaultConverterRegistry().findConverters(inputType, outputType);
-		if (converterList.size() > 1) {
+		if (converterList == null) {
+			System.err.println("Null converter list");
+		} else if (converterList.size() > 1) {
 			System.out.println("More than one converter");
 			for (Converter conv : converterList) {
 				System.out.println(">> "+conv+" "+conv.getDescription());
@@ -228,6 +230,15 @@ public class ConverterCli {
 		System.out.println("Usage:");
 		System.out.println("   -i gau-arc foo.arc -o cml foo.cml");
 		System.out.println();
+		System.out.println("-c <converterName>");
+		System.out.println("-d <startDirName>");
+		System.out.println("-e <edit1> <edit2> ...");
+		System.out.println("-i <inputFile>");
+		System.out.println("-it <inputType>");
+		System.out.println("-o <outputFile>");
+		System.out.println("-ot <outputType>");
+		System.out.println("-i <inputUrl>");
+		System.out.println();
 		System.out.println("Available converters:");
 		for (Converter info : ConverterRegistry.getDefaultConverterRegistry().getConverterList()) {
 		    System.out.println(info.getInputType()+"\t"+info.getOutputType());
@@ -236,11 +247,13 @@ public class ConverterCli {
 
     public static void main(String[] args) {
     	ConverterCli cli = new ConverterCli();
-        if (args.length == 0) {
+        if (args == null) {
+            throw new RuntimeException("args must not be null");
+        } else if (args.length == 0) {
             usage();
         } else if (args.length == 1) {
             String[] args1 = args[0].trim().split(Util.S_WHITEREGEX);
-            cli.processArgs(args1);
+        	cli.processArgs(args1);
         } else {
             cli.processArgs(args);
         }

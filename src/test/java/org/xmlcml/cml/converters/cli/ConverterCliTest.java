@@ -24,6 +24,17 @@ public class ConverterCliTest {
 	}
 
 	@Test
+    public void testUsage() {
+    	String[] args = {};
+    	try {
+    		ConverterCli.main(args);
+    	} catch (Exception e) {
+    		Assert.fail("Should not throw exception");
+    	}
+
+    }
+
+	@Test
     public void testList() {
     	String[] args = {"-i", "junk",  "junk",  "-o", "grot", "grot"};
     	try {
@@ -46,6 +57,27 @@ public class ConverterCliTest {
 
 
     @Test
+    public void testMol0() {
+    	String infile = "src/test/resources/examples/simple.mol";
+    	String outfile = "src/test/resources/examples/simple.cml";
+    	String reffile = "src/test/resources/examples/simple.ref.cml";
+    	String converterName = "org.xmlcml.cml.converters.molecule.mdl.MDL2CMLConverter";
+    	String[] args = {"-it "+MOL_TYPE+" -i "+infile +
+		         " -ot "+CML_TYPE+" -o "+outfile+" -c "+converterName};
+    	try {
+    		ConverterCli.main(args);
+    	} catch (Exception e) {
+//    		e.printStackTrace();
+    		Assert.fail("Should not throw "+ e);
+    	}
+		JumboTestUtils.assertEqualsIncludingFloat("fromMdl", 
+				CMLUtil.parseQuietlyIntoCML(new File(outfile)), 
+				CMLUtil.parseQuietlyIntoCML(new File(reffile)), 
+				true, 0.00000001);
+    }
+
+
+    @Test
     public void testMol() {
     	String infile = "src/test/resources/examples/simple.mol";
     	String outfile = "src/test/resources/examples/simple.cml";
@@ -55,6 +87,7 @@ public class ConverterCliTest {
     	try {
     		ConverterCli.main(args);
     	} catch (Exception e) {
+//    		e.printStackTrace();
     		Assert.fail("Should not throw "+ e);
     	}
 		JumboTestUtils.assertEqualsIncludingFloat("fromMdl", 
@@ -89,7 +122,7 @@ public class ConverterCliTest {
     	try {
     		ConverterCli.main(args);
     	} catch (Exception e) {
-    		e.printStackTrace();
+//    		e.printStackTrace();
     		Assert.fail("Should not throw "+ e);
     	}
 		JumboTestUtils.assertEqualsIncludingFloat("cmlLite", 
@@ -107,7 +140,7 @@ public class ConverterCliTest {
     	try {
     		ConverterCli.main(args);
     	} catch (Exception e) {
-    		e.printStackTrace();
+//    		e.printStackTrace();
     		Assert.fail("Should not throw "+ e);
     	}
 		JumboTestUtils.assertEqualsIncludingFloat("edit", 
@@ -125,7 +158,7 @@ public class ConverterCliTest {
     	try {
     		ConverterCli.main(args);
     	} catch (Exception e) {
-    		e.printStackTrace();
+//    		e.printStackTrace();
     		Assert.fail("Should not throw "+ e);
     	}
 		JumboTestUtils.assertEqualsIncludingFloat("edit", 
@@ -161,7 +194,7 @@ public class ConverterCliTest {
     	try {
     		ConverterCli.main(args);
     	} catch (Exception e) {
-    		e.printStackTrace();
+//    		e.printStackTrace();
     		Assert.fail("Should not throw "+ e);
     	}
 		JumboTestUtils.assertEqualsIncludingFloat("CDXML", 
@@ -180,7 +213,7 @@ public class ConverterCliTest {
     	try {
     		ConverterCli.main(args);
     	} catch (Exception e) {
-    		e.printStackTrace();
+//    		e.printStackTrace();
     		Assert.fail("Should not throw "+ e);
     	}
 		JumboTestUtils.assertEqualsIncludingFloat("CIF", 
@@ -199,7 +232,7 @@ public class ConverterCliTest {
     	try {
     		ConverterCli.main(args);
     	} catch (Exception e) {
-    		e.printStackTrace();
+//    		e.printStackTrace();
     		Assert.fail("Should not throw "+ e);
     	}
     }
