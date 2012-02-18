@@ -32,103 +32,37 @@
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jc-top-core</artifactId>
+            <artifactId>jc-top-all</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <!-- 
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jc-composite</artifactId>
+            <artifactId>jc-composite-all</artifactId>
             <version>0.3-SNAPSHOT</version>
         </dependency>
-        -->
-        <!--
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jc-crystal</artifactId>
+            <artifactId>jc-crystal-all</artifactId>
             <version>0.3-SNAPSHOT</version>
         </dependency>
-        -->
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jc-compchem-amber</artifactId>
+            <artifactId>jc-compchem-all</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jc-compchem-common</artifactId>
+            <artifactId>jc-molecule-all</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jc-compchem-dalton</artifactId>
+            <artifactId>jc-reaction-all</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>cml</groupId>
-            <artifactId>jc-compchem-gamessuk</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cml</groupId>
-            <artifactId>jc-compchem-gamessus</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cml</groupId>
-            <artifactId>jc-compchem-gaussian</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cml</groupId>
-            <artifactId>jc-compchem-jaguar</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cml</groupId>
-            <artifactId>jc-compchem-molcas</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cml</groupId>
-            <artifactId>jc-compchem-mopac</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cml</groupId>
-            <artifactId>jc-compchem-nwchem</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cml</groupId>
-            <artifactId>jc-compchem-qespresso</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cml</groupId>
-            <artifactId>jc-compchem-turbomole</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <!-- 
-        <dependency>
-            <groupId>cml</groupId>
-            <artifactId>jc-molecule</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        -->
-        <dependency>
-            <groupId>cml</groupId>
-            <artifactId>jc-molecule-cml</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cml</groupId>
-            <artifactId>jc-reaction</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cml</groupId>
-            <artifactId>jc-spectrum</artifactId>
+            <artifactId>jc-spectrum-all</artifactId>
             <version>${project.version}</version>
         </dependency>
 

@@ -172,6 +172,10 @@ public class ConverterCli {
 	}
 
 	private void getInputAndOutputTypes() {
+		if (converterName != null) {
+			// TODO
+			// get converter
+		}
 		if (inputType == null) {
 			if (inputName != null) {
 				inputType = ConverterRegistry.getDefaultConverterRegistry().getSingleMimeTypeFromFilename(inputName);
