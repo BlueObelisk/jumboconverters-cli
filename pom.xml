@@ -30,11 +30,13 @@
             <artifactId>cifxom</artifactId>
             <version>1.5-SNAPSHOT</version>
         </dependency>
+        <!-- 
         <dependency>
             <groupId>${jumbo.groupId}</groupId>
             <artifactId>jumbo</artifactId>
             <version>${jumbo.version}</version>
         </dependency>
+        -->
         <dependency>
             <groupId>${jc.groupId}</groupId>
             <artifactId>jc-top-all</artifactId>
