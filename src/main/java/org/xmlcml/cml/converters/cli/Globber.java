@@ -15,6 +15,7 @@ import java.util.List;
 
 // omit since Java7 is new
 public class Globber /*extends SimpleFileVisitor<Path>*/ {
+	// replace by apache
 //	/**
 //
 //	 * code that finds files that match the specified glob pattern.

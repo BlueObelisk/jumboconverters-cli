@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>cml</groupId>
+        <groupId>org.xml-cml.jc</groupId>
         <artifactId>jc-parent</artifactId>
         <version>0.3-SNAPSHOT</version>
     </parent>
@@ -21,7 +21,12 @@
 	
     <dependencies>
         <dependency>
-            <groupId>org.xml-cml</groupId>
+            <groupId>${jc.groupId}</groupId>
+            <artifactId>jc-top-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${cif.groupId}</groupId>
             <artifactId>cifxom</artifactId>
             <version>1.5-SNAPSHOT</version>
         </dependency>
@@ -31,48 +36,49 @@
             <version>${jumbo.version}</version>
         </dependency>
         <dependency>
-            <groupId>cml</groupId>
+            <groupId>${jc.groupId}</groupId>
             <artifactId>jc-top-all</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!-- 
         <dependency>
-            <groupId>cml</groupId>
+            <groupId>${jc.groupId}</groupId>
             <artifactId>jc-composite-all</artifactId>
             <version>0.3-SNAPSHOT</version>
         </dependency>
+        -->
         <dependency>
-            <groupId>cml</groupId>
+            <groupId>${jc.groupId}</groupId>
             <artifactId>jc-crystal-all</artifactId>
             <version>0.3-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>cml</groupId>
+            <groupId>${jc.groupId}</groupId>
             <artifactId>jc-compchem-all</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>cml</groupId>
+            <groupId>${jc.groupId}</groupId>
             <artifactId>jc-molecule-all</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>cml</groupId>
+            <groupId>${jc.groupId}</groupId>
             <artifactId>jc-reaction-all</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>cml</groupId>
+            <groupId>${jc.groupId}</groupId>
             <artifactId>jc-spectrum-all</artifactId>
             <version>${project.version}</version>
         </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>cml</groupId>
+            <groupId>${jc.groupId}</groupId>
             <artifactId>jc-top-testutils</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
