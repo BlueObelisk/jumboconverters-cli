@@ -7,7 +7,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.xmlcml.cml.converters.AbstractConverterModule;
 import org.xmlcml.cml.converters.Converter;
-import org.xmlcml.cml.converters.registry.ConverterRegistry;
+import org.xmlcml.cml.converters.ConverterRegistry;
 
 public class CliConverterRegistryTest {
 

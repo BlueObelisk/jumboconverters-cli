@@ -16,7 +16,8 @@ import org.apache.log4j.Logger;
 import org.xmlcml.cml.base.CMLUtil;
 import org.xmlcml.cml.converters.Converter;
 import org.xmlcml.cml.converters.MimeType;
-import org.xmlcml.cml.converters.registry.ConverterRegistry;
+//import org.xmlcml.cml.converters.registry.ConverterRegistry;
+import org.xmlcml.cml.converters.ConverterRegistry;
 import org.xmlcml.euclid.Util;
 
 /**
