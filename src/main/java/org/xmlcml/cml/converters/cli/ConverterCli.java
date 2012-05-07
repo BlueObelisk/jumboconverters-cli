@@ -2,7 +2,6 @@ package org.xmlcml.cml.converters.cli;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -15,9 +14,9 @@ import nu.xom.Element;
 import org.apache.log4j.Logger;
 import org.xmlcml.cml.base.CMLUtil;
 import org.xmlcml.cml.converters.Converter;
-import org.xmlcml.cml.converters.MimeType;
-//import org.xmlcml.cml.converters.registry.ConverterRegistry;
 import org.xmlcml.cml.converters.ConverterRegistry;
+import org.xmlcml.cml.converters.MimeType;
+
 import org.xmlcml.euclid.Util;
 
 /**
