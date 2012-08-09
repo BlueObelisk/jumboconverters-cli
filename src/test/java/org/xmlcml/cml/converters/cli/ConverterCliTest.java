@@ -12,7 +12,7 @@ import org.xmlcml.cml.base.CMLUtil;
 import org.xmlcml.cml.converters.MimeType;
 import org.xmlcml.cml.testutil.JumboTestUtils;
 
-@Ignore // TODO classpath problems
+//@Ignore // TODO classpath problems
 public class ConverterCliTest {
 
 	private static String CIF_TYPE = "chemical/x-cif";
@@ -36,7 +36,6 @@ public class ConverterCliTest {
     }
 
 	@Test
-	@Ignore // TODO
     public void testList() {
     	String[] args = {"-i", "junk",  "junk",  "-o", "grot", "grot"};
     	try {
@@ -80,7 +79,6 @@ public class ConverterCliTest {
 
 
     @Test
-	@Ignore // TODO
     public void testMol() {
     	String infile = "src/test/resources/examples/simple.mol";
     	String outfile = "src/test/resources/examples/simple.cml";
@@ -100,7 +98,7 @@ public class ConverterCliTest {
     }
 
     @Test
-    @Ignore // TODO
+    @Ignore
     public void testMolRoundtrip() {
     	String infile = "src/test/resources/examples/simple.cml";
     	String outfile = "src/test/resources/examples/simple.roundtrip.mol";
@@ -110,10 +108,10 @@ public class ConverterCliTest {
     	} catch (Exception e) {
     		Assert.fail("Should not throw "+ e);
     	}
-//		JumboTestUtils.assertEqualsIncludingFloat("toMdl", 
-//				CMLUtil.parseQuietlyIntoCML(new File(infile)), 
-//				CMLUtil.parseQuietlyIntoCML(new File(outfile)), 
-//				true, 0.00000001);
+		JumboTestUtils.assertEqualsIncludingFloat("toMdl", 
+				CMLUtil.parseQuietlyIntoCML(new File(infile)), 
+				CMLUtil.parseQuietlyIntoCML(new File(outfile)), 
+				true, 0.00000001);
     }
 
     @Test
@@ -232,6 +230,61 @@ public class ConverterCliTest {
 				true, 0.00000001);
     }
 
+    @Test
+    public void testNWChemLogExplicitConverter() {
+        String infile = "src/test/resources/examples/h2o_sto3g.nwo";
+        String outfile = "src/test/resources/examples/h2o_sto3g.cml";
+//        String reffile = "src/test/resources/examples/simple.lite.ref.cml";
+        String converter = "org.xmlcml.cml.converters.compchem.nwchem.log.NWChemLog2CompchemConverter";
+        String[] args = {"-i "+infile+" -o "+outfile+" -c "+converter};
+//        String[] args = {"-i "+infile+" -o "+outfile+" -it nwo -ot cml"};
+        try {
+            ConverterCli.main(args);
+        } catch (Exception e) {
+          e.printStackTrace();
+          Assert.fail("Should not throw "+ e);
+        }
+//        JumboTestUtils.assertEqualsIncludingFloat("cmlLite", 
+//                CMLUtil.parseQuietlyIntoCML(new File(outfile)), 
+//                CMLUtil.parseQuietlyIntoCML(new File(reffile)), 
+//                true, 0.00000001);
+    }
+
+    @Test
+    public void testNWChemLogMimeTypes() {
+        String infile = "src/test/resources/examples/h2o_sto3g.nwo";
+        String outfile = "src/test/resources/examples/h2o_sto3g.cml";
+//        String reffile = "src/test/resources/examples/simple.lite.ref.cml";
+        String[] args = {"-i "+infile+" -o "+outfile+" -it chemical/x-nwchem-log -ot chemical/x-cml"};
+        try {
+            ConverterCli.main(args);
+        } catch (Exception e) {
+          e.printStackTrace();
+          Assert.fail("Should not throw "+ e);
+        }
+//        JumboTestUtils.assertEqualsIncludingFloat("cmlLite", 
+//                CMLUtil.parseQuietlyIntoCML(new File(outfile)), 
+//                CMLUtil.parseQuietlyIntoCML(new File(reffile)), 
+//                true, 0.00000001);
+    }
+    
+    @Test
+    public void testNWChemLogFromSuffixes() {
+        String infile = "src/test/resources/examples/h2o_sto3g.nwo";
+        String outfile = "src/test/resources/examples/h2o_sto3g.cml";
+//        String reffile = "src/test/resources/examples/simple.lite.ref.cml";
+        String[] args = {"-i "+infile+" -o "+outfile};
+        try {
+            ConverterCli.main(args);
+        } catch (Exception e) {
+          e.printStackTrace();
+          Assert.fail("Should not throw "+ e);
+        }
+//        JumboTestUtils.assertEqualsIncludingFloat("cmlLite", 
+//                CMLUtil.parseQuietlyIntoCML(new File(outfile)), 
+//                CMLUtil.parseQuietlyIntoCML(new File(reffile)), 
+//                true, 0.00000001);
+    }
     	
     @Test
     @Ignore // TODO
@@ -261,6 +314,7 @@ public class ConverterCliTest {
     }
     
     @Test
+    @Ignore
     public void testExtension() {
     	Set<MimeType> types = ConverterCli.getTypesFromFilename("foo.cml");
     	Assert.assertNotNull("non-null list", types);

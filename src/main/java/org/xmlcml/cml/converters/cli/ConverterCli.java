@@ -69,7 +69,7 @@ public class ConverterCli {
 			outfile = new File(outputName);
 		} else {
 			infile = createInfile(inputName);
-			inStream = new FileInputStream(infile);
+//			inStream = new FileInputStream(infile);
 			outfile = new File(outputName);
 		}
 	}
@@ -89,28 +89,33 @@ public class ConverterCli {
 			converter = ConverterRegistry.getDefaultConverterRegistry().findSingleConverter(inputType, outputType);
 		}
 		if (converter == null) {
-			printConverters(args, inputType, outputType);
+		    System.err.println("Cannot find converter for: "+Util.concatenate(args, " "));
+			printConverters(inputType, outputType);
 			throw new RuntimeException("Cannot find converter");
 		}
-
+        LOG.debug("Using converter: "+converter.toString());
 	}
 
-	private void convert(String[] args) {
-		// FIXME this is horrible
-		if (true ) {
-//		if (!(converter instanceof CMLTransformMolecule)) {
-			if (inStream != null) {
-				converter.convert(inStream, outfile);
-			} else if (infiles != null) {
-				int idx = outputName.indexOf(".");
-				String outputName0 = outputName.substring(idx); // make suffix
-				for (File infile0 : infiles) {
-					File outfile0 = new File(infile0.getAbsolutePath().toString()+Util.S_PERIOD+outputName0);
-					converter.convert(infile0, outfile0);
-				}
-			}
-		}
-	}
+    private void convert(String[] args) {
+        // FIXME this is horrible
+        // if (!(converter instanceof CMLTransformMolecule)) {
+        // if (infile.exists() && outfile.canWrite()) {
+        if (infile.exists()) {
+            LOG.info("Converting: " + infile.getAbsolutePath() + " to "
+                    + outfile.getAbsolutePath());
+            converter.convert(infile, outfile);
+        } else if (inStream != null) {
+            converter.convert(inStream, outfile);
+        } else if (infiles != null) {
+            int idx = outputName.indexOf(".");
+            String outputName0 = outputName.substring(idx); // make suffix
+            for (File infile0 : infiles) {
+                File outfile0 = new File(infile0.getAbsolutePath().toString()
+                        + Util.S_PERIOD + outputName0);
+                converter.convert(infile0, outfile0);
+            }
+        }
+    }
 
 	private void parseArgs(String[] args) {
 		argCount = 0;
@@ -174,7 +179,8 @@ public class ConverterCli {
 	private void getInputAndOutputTypes() {
 		if (converterName != null) {
 			// TODO
-			// get converter
+		    // jmht for time being assume a duff converter picked up in getConverter
+		    return;
 		}
 		if (inputType == null) {
 			if (inputName != null) {
@@ -182,7 +188,9 @@ public class ConverterCli {
 			}
 		}
 		if (outputType == null) {
-			outputType = ConverterRegistry.getDefaultConverterRegistry().getSingleMimeTypeFromFilename(outputName);
+		    if (outputName != null) {
+		        outputType = ConverterRegistry.getDefaultConverterRegistry().getSingleMimeTypeFromFilename(outputName);
+		    }
 		}
 		if (inputType == null || outputType == null) {
 			throw new RuntimeException("Cannot find or deduce I/O types "+inputName+" - "+outputName);
@@ -192,9 +200,7 @@ public class ConverterCli {
 		}
 	}
 
-	private void printConverters(String[] args, String inputType,
-			String outputType) {
-		System.err.println("cannot find converter for: "+Util.concatenate(args, " "));
+	private void printConverters(String inputType, String outputType) {
 		List<Converter> converterList = ConverterRegistry.getDefaultConverterRegistry().findConverters(inputType, outputType);
 		if (converterList == null) {
 			System.err.println("Null converter list");
@@ -213,7 +219,7 @@ public class ConverterCli {
 			System.out.println("input file: "+infile.getCanonicalPath());
 		} catch (IOException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Cannot find file: ", e);
+			throw new RuntimeException("Cannot find input file: ", e);
 		}
 		return infile;
 	}
@@ -232,7 +238,19 @@ public class ConverterCli {
 
 	private static void usage() {
 		System.out.println("Usage:");
-		System.out.println("   -i gau-arc foo.arc -o cml foo.cml");
+		System.out.println();
+		System.out.println("If file suffixes can be used to determine the file types:");
+		System.out.println("   -i nwchemLog.nwo -o nwchemLog.cml");
+		System.out.println();
+		System.out.println(" ---  or --- ");
+		System.out.println();
+		System.out.println("Specify the MIME types of the files:");
+		System.out.println("   -i nwchemLog.nwo -o nwchemLog.cml -it chemical/x-nwchem-log -ot chemical/x-cml");
+		System.out.println();
+		System.out.println(" ---  or --- ");
+		System.out.println();
+		System.out.println("Explicitly specify the converter to be used:");
+		System.out.println("   -i nwchemLog.nwo -o nwchemLog.cml -c org.xmlcml.cml.converters.compchem.nwchem.log.NWChemLog2CompchemConverter");
 		System.out.println();
 		System.out.println("-c <converterName>");
 		System.out.println("-d <startDirName>");
